@@ -3,7 +3,7 @@ services:
   backend:
     build: .
     ports:
-      - 8000:3000
+      - 8080:3000
     volumes:
       - .:/app
     depends_on:
@@ -20,3 +20,6 @@ services:
 
     volumes:
       - .dbdata:/var/lib/mysql
+    ports:
+      - 33066:3306
+      # changing our port from 3306 to 33066 because if 3306 is our default posr for db so inorder to prevent conflict we are using different port in out local machine
